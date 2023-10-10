@@ -14,6 +14,29 @@ This would theoretically work on Windows, but it hasn't been tested.
 
 You can skip almost all of the installation if you use [Docker](#docker-installation).
 
+## Digital Ocean
+
+Use a large memory droplet.
+
+
+- sudo apt-get update --yes && sudo apt-get upgrade --yes
+- sudo apt-get install git nodejs npm \
+libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev libpng-dev build-essential g++ \
+ffmpeg \
+--yes
+
+- sudo apt-get install redis-server --yes
+- sudo ln -s `which nodejs` /usr/bin/node
+
+- git clone https://github.com/paul-adams-985/audiogram.git
+- cd audiogram
+
+- sed -i '/canvas/d' package.json
+- npm install
+- npm install git+https://github.com/chearon/node-canvas
+
+
+
 ## Ubuntu 14.04+ installation
 
 Note: if you're using something with < 1GB of RAM, like a Digital Ocean micro droplet, it might cause an installation problem on the last step. See [Linux troubleshooting](INSTALL.md#linux-troubleshooting) below for how to fix it.
